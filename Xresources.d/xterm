@@ -1,0 +1,5 @@
+!font
+xterm*faceName: xft:Anonymous Pro:size=20
+
+xterm*termName: xterm-256color
+xterm&metaSendsEscape: true
