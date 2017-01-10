@@ -32,7 +32,7 @@ if has('nvim')
 endif
 map <ESC> :noh<CR>
 
-" Alt keys to navigate
+" Alt keys to navigate - will likely have to change
 nnoremap è <C-w>h
 nnoremap ê <C-w>j
 nnoremap ë <C-w>k
@@ -59,7 +59,6 @@ set expandtab
 set shiftwidth=4
 set smartindent
 set autoindent
-
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
