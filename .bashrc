@@ -15,43 +15,46 @@ fi
 
 if [[ -n "dircolors" ]] && [[ -f $HOME/.dircolors ]] ; then 
     eval `dircolors $HOME/.dircolors`
-    alias ls='ls --color=auto'
 fi
 
-pdf() { zathura $1 & exit; }
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 
-#PS1='[\u@\h \W]\$ '
+PS1='[\u@\h \W]\$ '
 
+# CONDA BASH COMPLETION
+eval "$(register-python-argcomplete conda)"
+
+# ENV VARIABLES
 export SPARK_HOME=/opt/apache-spark/
-#export SCALA_HOME=/usr/share/scala/
-export CLASSPATH=$HOME/.jars/*
+export SCALA_HOME=/usr/share/scala/
 export PYSPARK_PYTHON=ipython
 export EDITOR=vim
-export PYTHONPATH="${PYTHONPATH}:$HOME/code"
+export PYTHONPATH=$PYTHONPATH:/home/devin/.pythonpath
 export PYOPENCL_CTX=0
-export PATH=$PATH:/home/devin/.gem/ruby/2.3.0/bin/:/home/devin/.bin/
+export PATH=$PATH:/home/devin/.gem/ruby/2.3.0/bin/:/home/devin/.bin/:/home/devin/.config/yarn/global/node_modules/.bin
 export GRB_LICENSE_FILE=/home/devin/.gurobi/gurobi.lic
-export NLTK_DATA=~/.nltk_data
+export NLTK_DATA=/home/devin/.nltk_data
+export CLASSPATH=/home/devin/.jars:$NLTK_DATA/custom_models/stanford-parser-full-2016-10-31
+
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/opt/cuda/lib64"
 export CUDA_HOME=/opt/cuda
+export BUILD_HOME=/tmp/
+export BROWSER=inox
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
+export IDEA_HOME=${HOME}/idea
 
-# aliases
-alias matlab='wmname LG3D && matlab -nosoftwareopengl -nosplash'
-alias matlabc='matlab -nodisplay -nosplash'
-alias connectCS='ssh -XY conathan@tdc1.cs.wisc.edu'
-alias mountCS='sshfs conathan@tdc1.cs.wisc.edu: /home/devin/.cshome -o idmap=user -o allow_other'
+export XDG_CURRENT_DESKTOP=gnome 
+export DESKTOP_SESSION=gnome 
+export DE=gnome 
+export QT_QPA_PLATFORMTHEME=gtk3
+
+# ALIASES
 alias powersave='sudo cpupower frequency-set -g powersave'
 alias performance='sudo cpupower frequency-set -g performance'
-alias python='ipython'
-alias gameboy='visualboyadvance-m'
-# alias vim='nvim'
 alias pac='sudo pacman -S'
-alias PAC='makepkg -sric'
-alias mountPhone='go-mtpfs ~/mnt/phone'
-alias unmountPhone='fusermount -u ~/mnt/phone'
-alias CP='rsync --progress'
-alias MV='rsync --progress --remove-source-files'
-alias du='du -hs'
 alias copy='xclip -selection c'
 alias rm='trash'
-alias vimide='nvim -u ~/.vimiderc'
+
+# BASH COMPLETIONS
+. <(kubectl completion bash)
