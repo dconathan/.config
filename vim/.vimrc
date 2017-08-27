@@ -4,6 +4,7 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
+Plug 'stephpy/vim-yaml'
 
 call plug#end()
 
