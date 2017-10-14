@@ -6,6 +6,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
 Plug 'stephpy/vim-yaml'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'alx741/vim-hindent'
 
 call plug#end()
 
