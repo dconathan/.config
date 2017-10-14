@@ -5,6 +5,7 @@ Plug 'tpope/vim-sensible'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
 Plug 'stephpy/vim-yaml'
+Plug 'neovimhaskell/haskell-vim'
 
 call plug#end()
 
@@ -13,3 +14,5 @@ nmap <silent> <A-h> <C-w>h
 nmap <silent> <A-j> <C-w>j
 nmap <silent> <A-k> <C-w>k
 nmap <silent> <A-l> <C-w>l
+
+let g:haskell_classic_highlighting = 1
