@@ -7,6 +7,7 @@ Plug 'ervandew/supertab'
 Plug 'stephpy/vim-yaml'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-hindent'
+Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
