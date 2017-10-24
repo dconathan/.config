@@ -8,6 +8,7 @@ Plug 'stephpy/vim-yaml'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-hindent'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
